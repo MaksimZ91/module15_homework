@@ -6,18 +6,18 @@ btnNode.addEventListener('click', useRequest)
 
 function useRequest () {
 
-  outputWindowNode.innerHTML=`Размер экрана составляет ${window.screen.width} px  в ширину и  ${window.screen.height} px в высоту`
+  outputWindowNode.innerHTML=`1.Размер экрана составляет ${window.screen.width} px  в ширину и  ${window.screen.height} px в высоту`
    if ("geolocation" in navigator){
    navigator.geolocation.getCurrentPosition(position,error)
   }else{
-    outputCoords.innerHTML="Браузер не поддерживает геолокацию"
+    outputCoords.innerHTML="2.Браузер не поддерживает геолокацию"
   }
   function position (position){
-    outputCoords.innerHTML=`Ваше местоположение: широта - ${position.coords.latitude}°, долгота - ${position.coords.longitude}°`
+    outputCoords.innerHTML=`2.Ваше местоположение: широта - ${position.coords.latitude}°, долгота - ${position.coords.longitude}°`
   }
 
   function error (){
-    outputCoords.innerHTML=`Информация о местоположении недоступна`
+    outputCoords.innerHTML=`2.Информация о местоположении недоступна`
   }
 }
 
