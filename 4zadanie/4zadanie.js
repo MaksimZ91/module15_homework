@@ -6,6 +6,7 @@ btnNode.addEventListener('click', useRequest)
 
 function useRequest(){
   clearTable ()
+  
   if ("geolocation" in navigator){
     navigator.geolocation.getCurrentPosition(position,error)
       }else{
@@ -18,6 +19,7 @@ fetch(`https://api.ipgeolocation.io/timezone?apiKey=32bcd4a6e4b548968e7afcdb682a
 }
 
 function addOutput (data){
+  outoutNode.innerHTML=""
    listNode.innerHTML+=`<li>Временная зона, в которой находится пользователь:  ${data.timezone}.</li>`
    listNode.innerHTML+=`<li>Местные дата и время:  ${data.date_time_txt}.</li>`
 }
